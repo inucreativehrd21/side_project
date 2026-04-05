@@ -5,6 +5,10 @@ from django.views.decorators.http import require_POST
 from common.forms import UserForm
 
 
+def page_not_found(request, exception):
+    return render(request, 'common/404.html', {})
+
+
 @require_POST
 def logout_view(request):
     logout(request)
